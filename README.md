@@ -1,4 +1,68 @@
-🌸 Iris Species Classification & AutoML Benchmark📌 Project OverviewThis project implements a comprehensive machine learning workflow to classify Iris flower species (Setosa, Versicolor, Virginica) based on their sepal and petal measurements.The notebook moves beyond simple modeling by incorporating Exploratory Data Analysis (EDA), robust preprocessing, and a performance comparison using both traditional manual modeling and AutoML (LazyPredict) to find the best performing algorithms.📂 DatasetThe project uses the classic Iris Dataset.Total Instances: 150 (50 per class)Features:Sepal Length (cm)Sepal Width (cm)Petal Length (cm)Petal Width (cm)Target: Species (Encoded as 0, 1, 2)🛠️ Workflow & MethodologyThe notebook follows a structured data science pipeline:1. Data Exploration & VisualizationLoaded dataset and checked for structural integrity.Analyzed statistical descriptions (describe()) and class balance (value_counts()).Visualization: Utilized Seaborn for Pairplots to observe feature correlations and separability, and Scatterplots to visualize clusters.2. Data PreprocessingCleaning: Removed irrelevant columns (e.g., Id).Encoding: Transformed categorical target labels (Species) into numerical format using LabelEncoder.Splitting: Divided data into training and testing sets (75% Train / 25% Test).Scaling: Applied StandardScaler to normalize feature distributions, which is crucial for algorithms like SVC and Gaussian Naive Bayes.3. Model ImplementationThree specific classifiers were manually trained and evaluated:Gaussian Naive Bayes (GaussianNB)Logistic RegressionSupport Vector Classifier (SVC - RBF Kernel)4. AutoML Benchmark (LazyPredict)Implemented LazyPredict to automatically run and evaluate over 25+ classification models simultaneously without parameter tuning.This helped establish a baseline and confirm that simpler models (like GaussianNB) perform exceptionally well on this dataset.📊 Model Performance ResultsDue to the clean nature of the dataset and proper preprocessing (Scaling), the models achieved high accuracy.ModelAccuracyPrecisionRecallF1-ScoreGaussian Naive Bayes100%1.001.001.00Logistic Regression100%1.001.001.00SVC (RBF Kernel)97%0.980.970.97Note: The high accuracy indicates that the classes (especially Setosa) are linearly separable or highly distinct in the feature space.🚀 Installation & UsageClone the repository:Bashgit clone https://github.com/yourusername/iris-classification.git
-cd iris-classification
-Install dependencies:Bashpip install numpy pandas matplotlib seaborn scikit-learn lazypredict
-Run the Notebook:Open irisdataset-naivebayesclassifier.ipynb in Jupyter Notebook or VS Code.📦 Libraries UsedPandas & NumPy: Data manipulation and algebra.Matplotlib & Seaborn: Data visualization.Scikit-Learn: Preprocessing, Model training, and Metrics.LazyPredict: Automated Machine Learning comparisons.
+# Iris Dataset — Naive Bayes Classifier
+
+**Repository:** Iris Naive Bayes classifier (Jupyter Notebook: `irisdataset-naivebayesclassifier.ipynb`)
+
+## Overview
+
+This notebook implements a Naive Bayes classifier on the classic Iris dataset. It demonstrates the full machine learning workflow: data loading, preprocessing, model training, evaluation, and visualization.
+
+## Key steps (auto-extracted)
+
+* Data loading (Iris dataset / CSV)
+* Exploratory data analysis (basic statistics & visualization)
+* Data preprocessing (scaling, label encoding if present)
+* Train/test split
+* Model selection: GaussianNB (Naive Bayes)
+* Model training and prediction
+* Evaluation: accuracy, confusion matrix, classification report
+* Visualizations for results and feature relationships
+
+## Main dependencies
+
+* Python 3.x
+* numpy
+* pandas
+* scikit-learn
+* matplotlib
+* seaborn (optional)
+* joblib / pickle (optional for saving model)
+
+## Usage
+
+1. Clone the repository and open the notebook in Jupyter Lab/Notebook.
+2. Ensure required libraries are installed:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the notebook cells sequentially. Adjust file paths if the dataset is stored locally.
+
+## Notebook structure
+
+* `Data Loading` — Load Iris data using `pandas` / `sklearn.datasets`.
+* `EDA` — Show head, describe, pairplots / histograms.
+* `Preprocessing` — (Optional) scaling and label encoding.
+* `Model Training` — Initialize `GaussianNB`, train on the training split.
+* `Evaluation` — Generate confusion matrix, accuracy score and classification report.
+* `Visualization` — Plot decision boundaries / confusion matrices (if implemented).
+
+## Results
+
+The notebook reports model performance metrics (accuracy, precision, recall, F1-score) and visualizes the confusion matrix. Typical accuracy for Naive Bayes on Iris is high (~0.9+), but please refer to the notebook outputs for exact numbers.
+
+## Suggestions / Next steps
+
+* Add a `requirements.txt` containing exact package versions.
+* Save trained model to disk with `joblib.dump()` for later reuse.
+* Add cross-validation and hyperparameter tuning (e.g., `GridSearchCV`).
+* Compare Naive Bayes with other classifiers (Logistic Regression, SVM, RandomForest).
+* Wrap preprocessing and model training into functions or a reproducible script (`train.py`).
+
+## License
+
+Add a license if you plan to publish (e.g., MIT).
+
+---
+
+*This README was generated from an analysis of the notebook at `/mnt/data/irisdataset-naivebayesclassifier.ipynb`.*
