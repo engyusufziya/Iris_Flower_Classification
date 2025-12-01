@@ -60,5 +60,3 @@ Some of the analysis and visualizations included in the project:
 * **Scatterplot:** Highlights how petal length and width are strong predictors of species
 
 ```
-
----
